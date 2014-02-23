@@ -1,0 +1,18 @@
+<?php
+
+namespace ride\library\api\doc\tag;
+
+use ride\library\api\doc\Doc;
+
+/**
+ * Parser for the internal tag
+ */
+class InternalTag extends Tag {
+
+    /**
+     * Name of this tag
+     * @var string
+     */
+    const NAME = 'internal';
+
+}
