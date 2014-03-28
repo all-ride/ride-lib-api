@@ -29,13 +29,13 @@ class DocParser {
 
     /**
      * Tag parser
-     * @var ride\library\api\doc\tag\TagParser
+     * @var \ride\library\api\doc\tag\TagParser
      */
     private $tagParser;
 
     /**
      * Construct a new doc parser
-     * @param ride\library\api\doc\tag\TagParser $tagParser
+     * @param \ride\library\api\doc\tag\TagParser $tagParser
      * @return null
      */
     public function __construct(TagParser $tagParser) {
@@ -45,7 +45,7 @@ class DocParser {
     /**
      * Parse a doc comment string into a Doc data container
      * @param string $string doc comment string
-     * @return ride\library\api\doc\Doc the provided doc comment string parsed
+     * @return \ride\library\api\doc\Doc the provided doc comment string parsed
      * into a Doc data container
      */
     public function parse($string) {
@@ -66,7 +66,7 @@ class DocParser {
 
     /**
      * Sets the short description to the Doc object and removes the lines containing it
-     * @param ride\library\api\doc\Doc $doc Doc data container
+     * @param \ride\library\api\doc\Doc $doc Doc data container
      * @param array $lines Array with the lines of the doc comment
      * @return array The remaining lines
      */
@@ -98,7 +98,7 @@ class DocParser {
 
     /**
      * Sets the long description to the Doc object and removes the lines containing it
-     * @param ride\library\api\doc\Doc $doc Doc data container
+     * @param \ride\library\api\doc\Doc $doc Doc data container
      * @param array $lines Array with the lines of the doc comment
      * @return array The remaining lines
      */

@@ -13,19 +13,19 @@ class ReflectionProperty extends PhpReflectionProperty {
 
     /**
      * Instance of the doc parser
-     * @var ride\library\api\doc\DocParser
+     * @var \ride\library\api\doc\DocParser
      */
     private $docParser;
 
     /**
      * API documentation object for this property
-     * @var ride\library\api\doc\Doc
+     * @var \ride\library\api\doc\Doc
      */
     private $doc;
 
     /**
      * Sets the doc parser to this instance
-     * @param ride\library\api\doc\DocParser $docParser
+     * @param \ride\library\api\doc\DocParser $docParser
      * @return null
      */
     public function setDocParser(DocParser $docParser) {
@@ -34,7 +34,7 @@ class ReflectionProperty extends PhpReflectionProperty {
 
     /**
      * Get the documentation object for this property
-     * @return ride\library\api\doc\Doc
+     * @return \ride\library\api\doc\Doc
      */
     public function getDoc() {
         if ($this->doc) {

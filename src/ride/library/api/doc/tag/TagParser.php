@@ -82,7 +82,7 @@ class TagParser {
 
     /**
      * Parse the tags from the lines array into the Doc data container
-     * @param ride\library\api\doc\Doc $doc Doc data container
+     * @param \ride\library\api\doc\Doc $doc Doc data container
      * @param array $lines doc comment lines
      * @return null
      */
