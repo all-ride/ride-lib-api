@@ -169,22 +169,30 @@ class ApiBrowser {
      * @return array Array with namespaces as key and as value
      */
     private function readNamespacesFromPath(File $path, array $namespaces, $prefix = null) {
-        if (!$path->exists()) {
+        if (!$path->exists() || !$path->isDirectory()) {
             return $namespaces;
         }
 
-        if ($path->isDirectory()) {
-            $files = $path->read();
-            foreach ($files as $file) {
-                if (!$file->isDirectory()) {
-                    continue;
-                }
+        $hasFiles = false;
 
-                $name = $prefix . $file->getName();
+        $files = $path->read();
+        foreach ($files as $file) {
+            if (!$file->isDirectory()) {
+                $hasFiles = true;
 
-                $namespaces[$name] = $name;
-                $namespaces = $this->readNamespacesFromPath($file, $namespaces, $name . self::NAMESPACE_SEPARATOR);
+                continue;
             }
+
+            $name = $prefix . $file->getName();
+
+            $namespaces[$name] = $name;
+            $namespaces = $this->readNamespacesFromPath($file, $namespaces, $name . self::NAMESPACE_SEPARATOR);
+        }
+
+        if (!$hasFiles && $prefix) {
+            $prefix = substr($prefix, 0, -1);
+
+            unset($namespaces[$prefix]);
         }
 
         return $namespaces;
