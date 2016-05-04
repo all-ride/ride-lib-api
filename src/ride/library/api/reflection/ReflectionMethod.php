@@ -13,7 +13,7 @@ class ReflectionMethod extends PhpReflectionMethod {
 
     /**
      * Instance of the doc parser
-     * @var ride\library\api\doc\DocParser
+     * @var \ride\library\api\doc\DocParser
      */
     private $docParser;
 
@@ -25,7 +25,7 @@ class ReflectionMethod extends PhpReflectionMethod {
 
     /**
      * API documentation object for this method
-     * @var ride\library\api\doc\Doc
+     * @var \ride\library\api\doc\Doc
      */
     private $doc;
 
@@ -52,7 +52,7 @@ class ReflectionMethod extends PhpReflectionMethod {
 
     /**
      * Sets the doc parser to this instance
-     * @param ride\library\api\doc\DocParser $docParser
+     * @param \ride\library\api\doc\DocParser $docParser
      * @return null
      */
     public function setDocParser(DocParser $docParser) {
@@ -61,7 +61,7 @@ class ReflectionMethod extends PhpReflectionMethod {
 
     /**
      * Get the API documentation object for this method
-     * @return ride\library\api\doc\Doc
+     * @return \ride\library\api\doc\Doc
      */
     public function getDoc() {
         if ($this->doc) {

@@ -2,8 +2,6 @@
 
 namespace ride\library\api\doc\tag;
 
-use ride\library\api\doc\Doc;
-
 /**
  * Parser for the internal tag
  */
