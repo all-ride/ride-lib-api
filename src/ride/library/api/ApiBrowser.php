@@ -8,7 +8,7 @@ use ride\library\system\file\FileSystem;
 use ride\library\system\file\File;
 
 /**
- * Zibo live API browser using PHP's reflection interface
+ * API browser using PHP's reflection interface
  */
 class ApiBrowser {
 
@@ -20,13 +20,13 @@ class ApiBrowser {
 
     /**
      * Parser for the doc comments
-     * @var ride\library\api\doc\DocParser
+     * @var \ride\library\api\doc\DocParser
      */
     private $docParser;
 
     /**
      * Instance of the file system
-     * @var ride\library\system\file\FileSystem
+     * @var \ride\library\system\file\FileSystem
      */
     private $fileSystem;
 
@@ -44,6 +44,8 @@ class ApiBrowser {
 
     /**
      * Constructs a new API browser
+     * @param \ride\library\api\doc\DocParser $docParser
+     * @param \ride\library\system\file\FileSystem $fileSystem
      * @param array $includePaths The paths to read
      * @return null
      */
@@ -110,7 +112,7 @@ class ApiBrowser {
      * Get the reflection class object of a class
      * @param string $namespace namespace of the class
      * @param string $class name of the class
-     * @return ride\library\api\ReflectionClass
+     * @return \ride\library\api\ReflectionClass
      */
     public function getClass($namespace, $class) {
         $className = str_replace(self::NAMESPACE_SEPARATOR, '\\', $namespace) . '\\' . $class;
@@ -123,7 +125,7 @@ class ApiBrowser {
 
     /**
      * Read all the classes in a path
-     * @param ride\library\system\file\File $path Path to read
+     * @param \ride\library\system\file\File $path Path to read
      * @param array $classes Already found classes
      * @param string $namespace Look for classes in the provided namespace
      * @param boolean $recursive Look in subdirectories
@@ -163,7 +165,7 @@ class ApiBrowser {
 
     /**
      * Read all the namespaces in a path
-     * @param ride\library\system\file\File $path Path to read
+     * @param \ride\library\system\file\File $path Path to read
      * @param array $namespaces Already found namespaces
      * @param string $prefix Namespace prefix for the results
      * @return array Array with namespaces as key and as value
